@@ -19,9 +19,9 @@ JSON调用格式
 JSON数据
 ```json
 {
-    "code":"200" #图片状态码
-    "acgurl":"https:\/\/cdn.jsdelivr.net\/gh\/oyzbmmmm\/image-drive@master\/acg\/acg%20(56).jpg" #图片地址
-    "width":"2048" #图片宽
-    "height":"1152" #图片高
+    "code":"200",
+    "acgurl":"https:\/\/cdn.jsdelivr.net\/gh\/oyzbmmmm\/image-drive@master\/acg\/acg%20(56).jpg",
+    "width":"2048",
+    "height":"1152",
 }
 ```
