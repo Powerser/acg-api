@@ -1,30 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-//
-//                       _oo0oo_
-//                      o8888888o
-//                      88" . "88
-//                      (| -_- |)
-//                      0\  =  /0
-//                    ___/`---'\___
-//                  .' \\|     |// '.
-//                 / \\|||  :  |||// \
-//                / _||||| -:- |||||- \
-//               |   | \\\  -  /// |   |
-//               | \_|  ''\---/''  |_/ |
-//               \  .-\__  '-'  ___/-. /
-//             ___'. .'  /--.--\  `. .'___
-//          ."" '<  `.___\_<|>_/___.' >' "".
-//         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-//         \  \ `_.   \_ __\ /__ _/   .-` /  /
-//     =====`-.____`.___ \_____/___.-`___.-'=====
-//                       `=---='
-//
-//
-//     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//
-//              佛祖保佑         永无BUG
--->
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -60,47 +34,10 @@
         	<p>&copy; <span id="year"></span> <a target="_black" href="http://www.silencetime.com/">silencetime</a> 
               
 		</div>
-		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 		<script>
-    	    var d = new Date();
-    	    console.log(d);
-    	    var year = d.getFullYear();
-    	    console.log(year);
-    	    $('#year').text(year);
-    	    $('document').ready(async function() {
-                await changeBg();
-    	    })
-    	    async function getImage() { 
-                let picUrl = '';
-                let status = '';
-                await fetch('https://tool.silencetime.com/acg-api/random.php?return=json')
-                    .then(response => response.json())
-                    .then(data => {
-                        picUrl = 'url("' + data.imgurl + '")';
-                        status = data.code
-                    })
-                    .catch(console.error)
-                picUrl = await picUrl;
-                status = await status;
-                // console.log('获取图片状态：' + status);
-                if (status != 200) {
-                    return;
-                }
-                return picUrl;
-            }
-            //定时器切换图片
-            // setInterval(changeBg, 7000); 
-            async function changeBg() {
-                let picUrl = getImage();
-                let pic = await picUrl;
-                setTimeout(function(){
-                    $('.bg').css('background-image', pic);
-                    $('.bg').fadeIn(1000);
-                    setTimeout(function(){$('.bg2').css('background-image', pic)}, 1000);
-                    setTimeout(function(){$('.bg').fadeOut(100)}, 1500);
-                    changeBg();
-                }, 7000)
-            }
-    	</script>
+		    var d = new Date();
+		    var year = d.getFullYear();
+		    document.getElementById('year').innerHTML(year)
+		</script>
 	</body>
 </html>
